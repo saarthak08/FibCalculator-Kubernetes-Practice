@@ -1,12 +1,20 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: client-pod
-  labels: 
-    component: web
+    name: client-pod
+    labels:
+        component: web
 spec:
-  containers:
-    - name: client
-      image: saarthak08/complex-multistage-docker-client
-      ports: 
-        - containerPort: 3000
+    containers:
+        - name: client
+          image: saarthak08/complex-multistage-docker-client
+          imagePullPolicy: Always
+          ports:
+              - containerPort: 3000
+          resources:
+              limits:
+                  memory: 512Mi
+                  cpu: "1"
+              requests:
+                  memory: 256Mi
+                  cpu: "0.2"
