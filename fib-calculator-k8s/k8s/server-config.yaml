@@ -15,7 +15,7 @@ spec:
         spec:
             containers:
                 - name: server
-                  image: saarthak08/complex-multistage-docker-server
+                  image: saarthak08/complex-multistage-docker-server:v3
                   ports:
                       - containerPort: 5000
                   env:
